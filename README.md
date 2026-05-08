@@ -38,8 +38,8 @@ Tailwind + shadcn/ui · AWS S3 · Resend · Google Analytics 4 · Vercel.
 - 6 lokale için tam SEO çıktısı: `metadataBase`, locale başına
   `canonical`, `hreflang` + `x-default`, lokalize meta description'lar,
   sitemap, eski IIS rotalarından 301 redirect.
-- KVKK Md. 10 + GDPR Art. 13 uyumlu Gizlilik / Çerez / KVKK Aydınlatma
-  metinleri — DB-edit'lenebilir (admin'den anında düzenlenir,
+- KVKK/GDPR-oriented legal content management for Gizlilik / Çerez / KVKK
+  Aydınlatma metinleri — DB-edit'lenebilir (admin'den anında düzenlenir,
   `force-dynamic` ile yayına yansır).
 - Telefon validasyonu: 100+ ülke için ülke kodu seçici, ülkeye özel
   uzunluk ve format kontrolü, `Intl.DisplayNames` ile locale'a göre ülke
@@ -75,9 +75,9 @@ Tailwind + shadcn/ui · AWS S3 · Resend · Google Analytics 4 · Vercel.
 - Complete SEO surface for six locales: `metadataBase`, per-locale
   `canonical`, `hreflang` map with `x-default`, localized meta
   descriptions, sitemap, 301 redirects from legacy IIS routes.
-- Privacy / Cookies / KVKK information notices aligned with KVKK Art. 10
-  and GDPR Art. 13 — DB-editable from the admin, served via
-  `force-dynamic` so edits go live without redeploy.
+- KVKK/GDPR-oriented legal content management for Privacy / Cookies / KVKK
+  information notices — DB-editable from the admin, served via `force-dynamic`
+  so edits go live without redeploy.
 - Phone validation: country-code picker for 100+ countries, per-country
   length and format rules, `Intl.DisplayNames` for locale-aware country
   names.
@@ -237,9 +237,9 @@ categories can ship without code changes.
 - 301 redirects from the legacy IIS site preserve SEO equity:
   `/tr-TR/Index → /tr`, `/en-US/PrivacyNotice → /en/gizlilik`,
   `/tr-TR/ProductListPage?catId=N → /tr/urunler`, etc.
-- Hardcoded TR strings ("Endüstriyel Sürücüler", "Robodor — 2026") that
-  sneaked into the EN / DE pages were caught and routed through `next-intl`
-  — flagged via diff-of-extracted-text-per-locale on every deploy.
+- Hardcoded Turkish product labels that appeared in EN / DE pages were caught
+  and routed through `next-intl` — flagged via diff-of-extracted-text-per-locale
+  on every deploy.
 
 ---
 
@@ -248,7 +248,7 @@ categories can ship without code changes.
 - Six-locale "Skip to content" link — properly localized, not buried.
 - Hero auto-rotates between product variants; a Pause / Play toggle
   with `aria-pressed` exposes the rotation state to keyboard and screen
-  readers, satisfying WCAG 2.2.2 (Pause, Stop, Hide).
+  readers, supporting WCAG 2.2.2-style pause/stop/hide expectations.
 - Single semantic `h1` per page, with the slider product names dropped
   to `h2`.
 - All `<Image>` usages have explicit `alt` text — verified by an
