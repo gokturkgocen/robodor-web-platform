@@ -7,6 +7,12 @@ encoders and sliding-door drivers serving customers across Türkiye and Europe.
 > This repository is a **case study only**. It contains no source code from
 > the production application. The live site is at
 > **[https://www.robodor.com](https://www.robodor.com)**.
+>
+> The production repository and commit history are private because they contain
+> company-owned source code, admin flows, deployment configuration and product
+> details. This public repo is the sanitized portfolio layer: screenshots from
+> the live public site, architecture notes, trade-offs, and enough technical
+> detail to review the work without exposing Robodor's implementation.
 
 ---
 
@@ -42,7 +48,8 @@ Tailwind + shadcn/ui · AWS S3 · Resend · Google Analytics 4 · Vercel.
   olan otomatik dönen hero, semantic h1 hierarchy, WCAG 2.2.2 uyumu.
 - Audit-sürücülü kalite turları: 6 ardışık dış audit raporu sonrası
   çıkan ~50 kalem (UI overflow, çeviri kalitesi, h1 tutarlılığı, decimal
-  separator, locale leak, vs.) hepsi commit zincirinde takip edildi.
+  separator, locale leak, vs.) private/deploy repo commit zincirinde takip
+  edildi.
 
 ---
 
@@ -79,8 +86,23 @@ Tailwind + shadcn/ui · AWS S3 · Resend · Google Analytics 4 · Vercel.
   motion controls.
 - Iterative audit-driven hardening: ~50 issues across 6 external review
   rounds (UI overflow, translation quality, h1 consistency, decimal
-  separators, hardcoded TR leaks, etc.) tracked and shipped in the commit
-  chain.
+  separators, hardcoded TR leaks, etc.) tracked and shipped in the private
+  production/deploy repository.
+
+---
+
+## Public Evidence
+
+This repo is intentionally not a source mirror. The strongest public proof is:
+
+- **Live product:** [robodor.com](https://www.robodor.com) is the production
+  site.
+- **Public screenshots:** wide desktop captures from the live site are in
+  [`screenshots/`](screenshots/).
+- **Architecture notes:** this README documents the content model, admin
+  workflows, SEO/i18n surface, deployment shape, and hardening decisions.
+- **Disclosure boundary:** no admin screenshots, database schema dumps, secrets,
+  customer-only files, upload paths, or proprietary business logic are included.
 
 ---
 
@@ -238,19 +260,15 @@ categories can ship without code changes.
 
 ## Screenshots
 
-> Screenshots are visual proof of the live work. They show only public
-> material from www.robodor.com, with brand-protected customer logos
-> cropped out.
+Screenshots are visual proof of the live work. They are captured at
+**1920 × 1080** from public pages on www.robodor.com only.
 
 | Surface | File |
 |---|---|
-| Multilingual hero — product chameleon | `screenshots/01-hero.png` |
-| Products listing with server-side filter | `screenshots/02-products-listing.png` |
-| Product detail — six-locale spec table | `screenshots/03-product-detail.png` |
-| Admin shell — full nav | `screenshots/04-admin-shell.png` |
-| Admin — locale-tabbed product spec editor | `screenshots/05-admin-spec-editor.png` |
-| Admin — legal document editor | `screenshots/06-admin-legal-editor.png` |
-| Mobile — hamburger menu with locale switcher | `screenshots/07-mobile-menu.png` |
+| Home hero | [`screenshots/01-home-hero-desktop.png`](screenshots/01-home-hero-desktop.png) |
+| Product listing with active category filter | [`screenshots/02-product-list-desktop.png`](screenshots/02-product-list-desktop.png) |
+| German product detail page | [`screenshots/03-product-detail-desktop.png`](screenshots/03-product-detail-desktop.png) |
+| References page | [`screenshots/04-references-desktop.png`](screenshots/04-references-desktop.png) |
 
 ---
 
